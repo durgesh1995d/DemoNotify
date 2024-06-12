@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "DemoNotify",
+    "slug": "DemoNotify",
+    "version": "1.0.0",
+    "android": {
+      "googleServicesFile": "./android/app/google-services.json"
+    }
+  }
+}

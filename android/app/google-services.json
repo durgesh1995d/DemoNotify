@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "972720114975",
+    "project_id": "demonotify-51a47",
+    "storage_bucket": "demonotify-51a47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972720114975:android:e1cb3b73e0588add08f42a",
+        "android_client_info": {
+          "package_name": "com.demonotify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANGOSIs-ru8P3wtd50eTXBW60yD-0Mvt4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
