@@ -51,33 +51,36 @@ const PostItem = React.memo(({ post, onPress }) => {
   );
 });
 
-const PostDetails = ({ postId, onClose }) => {
-  const [postDetails, setPostDetails] = useState(null);
+const PostDetails = React.memo(
+  ({ postId, onClose }) => {
+    const [postDetails, setPostDetails] = useState(null);
 
-  useEffect(() => {
-    const fetchPostDetails = async () => {
-      const response = await fetch(
-        `https://jsonplaceholder.typicode.com/posts/${postId}`
-      );
-      const data = await response.json();
-      setPostDetails(data);
-    };
+    useEffect(() => {
+      const fetchPostDetails = async () => {
+        const response = await fetch(
+          `https://jsonplaceholder.typicode.com/posts/${postId}`
+        );
+        const data = await response.json();
+        setPostDetails(data);
+      };
 
-    fetchPostDetails();
-  }, [postId]);
+      fetchPostDetails();
+    }, [postId]);
 
-  if (!postDetails) {
-    return <Text>Loading...</Text>;
-  }
+    if (!postDetails) {
+      return <Text>Loading...</Text>;
+    }
 
-  return (
-    <View style={styles.card}>
-      <Text style={styles.textStyle}>{postDetails.title}</Text>
-      <Text style={{ marginBottom: 10 }}>{postDetails.body}</Text>
-      <Button title='Close' onPress={onClose} />
-    </View>
-  );
-};
+    return (
+      <View style={styles.card}>
+        <Text style={styles.textStyle}>{postDetails.title}</Text>
+        <Text style={{ marginBottom: 10 }}>{postDetails.body}</Text>
+        <Button title='Close' onPress={onClose} />
+      </View>
+    );
+  },
+  (pev, pre) => pev.onClose !== pre.onClose
+);
 
 export default function App() {
   const [posts, setPosts] = useState([]);
